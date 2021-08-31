@@ -1,7 +1,16 @@
 
 
-if __name__ == ""__main__"":
-        
+#if __name__ == ""__main__"":
+def inicio():
+    def fun_decora_1(f):
+        def wrapper(*args, **kwargs):
+            
+            f(*args, **kwargs)    
+            print("ESTE SALUDO SE EJECUTA CON UN DECORADOR LUEGO DE SALUDAR A TODAS LAS AULAS")
+        return wrapper
+
+
+    @fun_decora_1
     def saludo_aula(aulas):
         for aula in aulas:
             print("Hola Aula "+str(aula))
@@ -20,4 +29,8 @@ if __name__ == ""__main__"":
 
 
     aula=ingreso_aulas()
+    
     saludo_aula(aula)
+
+
+inicio()
